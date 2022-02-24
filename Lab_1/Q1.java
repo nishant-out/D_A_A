@@ -20,7 +20,7 @@ public class Q1{
       System.out.println( "Enter Element to Search: " );
       int key = sc.nextInt();
       
-      int compare = 0;
+      int compare = 1;  // Because comparisons here are always ( n +1 )
       
       for( i = 0; i < n; i++){
          
