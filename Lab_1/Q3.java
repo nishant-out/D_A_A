@@ -1,4 +1,4 @@
-// GIVEN AN ALREADY SORTED ARRAY OF POSITIVE INTEGERS, DESIGN AN ALGORITHM AND IMPLEMENT IT USING A PROGRAM TO FIND WHETHER A GIVEN KEY ELEMENT IS PRESENT IN THE SORTED ARRAY OR NOT. FOR AN ARRAY ARR[ N ], SEARCH AT INDEX ARR[ 0 ], ARR[ 2 ], ARR[ 4 ], ARR[ 2^K ] AND SO ON. ONCE THE INTERVAL ( ARR[ 2^K ] < KEY < ARR[ 2^K -1] ) IS FOUND, PERFORM A LINEAR SEARCH OPERATIONS FROM THE INDEX 2^K TO FIND THE ELEMENT KEY. ( COMPLEXITY < O(N), WHERE N IS THE NUMBER OF ELEMENTS NEED TO BE SCANNED FOR SEARCHING ).
+// GIVEN AN ALREADY SORTED ARRAY OF POSITIVE INTEGERS, DESIGN AN ALGORITHM AND IMPLEMENT IT USING A PROGRAM TO FIND WHETHER A GIVEN KEY ELEMENT IS PRESENT IN THE SORTED ARRAY OR NOT. FOR AN ARRAY ARR[ N ], SEARCH AT INDEX ARR[ 0 ], ARR[ 2 ], ARR[ 4 ], ARR[ 2^K ] AND SO ON. ONCE THE INTERVAL ( ARR[ 2^K ] < KEY < ARR[ 2^( K +1) ] ) IS FOUND, PERFORM A LINEAR SEARCH OPERATIONS FROM THE INDEX 2^K TO FIND THE ELEMENT KEY. ( COMPLEXITY < O(N), WHERE N IS THE NUMBER OF ELEMENTS NEED TO BE SCANNED FOR SEARCHING ).
 
 import java.util.*;  
 
@@ -21,11 +21,20 @@ public class Q3{
       System.out.println( "Enter Element to Search: " );
       int key = sc.nextInt();
       
-      int compare = 0;
+      int i = 0;
+      int k = 0;
+      while( i < n ){
       
-      for( int i = 0; i < n; i++ ){
-      
+         i = Math.pow( 2, k );
+
+         if( arr[ i ] > key ){
+            break;
+         }
+         
+         k++;
       }
+      
+      for( 
       
       if( st > en )
          System.out.println( "Total Comparisons: " + compare + "\nKey not Found" );
