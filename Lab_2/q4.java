@@ -1,4 +1,6 @@
 
+// given a sorted array that can contain duplicate elements also
+// you have to find no. of occurence of a key element in the array in log( n ) time
 
 import java.util.*;  
 
