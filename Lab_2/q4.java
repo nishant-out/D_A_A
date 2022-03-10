@@ -47,22 +47,23 @@ public class q4{
       
       int st = focc( arr, 0, mid, arr[ mid ] );
       
+      int en = locc( arr, mid, en, arr[ mid ] );
       
       
+      System.out.println( st );
       
       
-      
-      
-      if( copies == 0 )
-         System.out.println( "\nKey not Found" );
-      else
-         System.out.println( "\nKey Found " + copies + " times" );
+ //     if( copies == 0 )
+  //       System.out.println( "\nKey not Found" );
+ //     else
+  //       System.out.println( "\nKey Found " + copies + " times" );
       
    }
    
    
    public static int focc( int[] arr, int st, int en, int key ){
-   			
+   		//	here en th index will always contain key
+   		
    		if( st <= en ){
    		
    			int mid = ( st +en ) /2;
@@ -74,8 +75,9 @@ public class q4{
    					return focc( arr, st, mid -1, key );
    				
    			else
-   				return focc( arr, st, mid, key );
+   				return focc( arr, mid +1, en, key );
    		}
+   		return en;
    }
    
    
@@ -96,6 +98,6 @@ public class q4{
          else
             return bs( arr, mid +1, en, key );
       }
-      
+      return -1;
    }
 }
